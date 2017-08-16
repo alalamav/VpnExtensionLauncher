@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FCB2DEFB1F44AD07000C6A44 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2DEFA1F44AD07000C6A44 /* main.swift */; };
+		FCB2DF171F44CC63000C6A44 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCB2DF161F44CC63000C6A44 /* Info.plist */; };
+		FCB2DF1B1F44CD95000C6A44 /* PacketTunnelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB2DF1A1F44CD95000C6A44 /* PacketTunnelProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +27,23 @@
 /* Begin PBXFileReference section */
 		FCB2DEF71F44AD07000C6A44 /* VpnExtensionLauncher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VpnExtensionLauncher; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB2DEFA1F44AD07000C6A44 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FCB2DF011F44C936000C6A44 /* VpnExtensionLauncher.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = VpnExtensionLauncher.entitlements; sourceTree = "<group>"; };
+		FCB2DF061F44CC36000C6A44 /* VpnExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VpnExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCB2DF161F44CC63000C6A44 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCB2DF181F44CCC5000C6A44 /* VpnExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = VpnExtension.entitlements; sourceTree = "<group>"; };
+		FCB2DF191F44CD55000C6A44 /* PacketTunnelProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketTunnelProvider.h; sourceTree = "<group>"; };
+		FCB2DF1A1F44CD95000C6A44 /* PacketTunnelProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketTunnelProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FCB2DEF41F44AD07000C6A44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB2DF031F44CC36000C6A44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				FCB2DEF91F44AD07000C6A44 /* VpnExtensionLauncher */,
+				FCB2DF071F44CC36000C6A44 /* VpnExtension */,
 				FCB2DEF81F44AD07000C6A44 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				FCB2DEF71F44AD07000C6A44 /* VpnExtensionLauncher */,
+				FCB2DF061F44CC36000C6A44 /* VpnExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,9 +74,21 @@
 		FCB2DEF91F44AD07000C6A44 /* VpnExtensionLauncher */ = {
 			isa = PBXGroup;
 			children = (
+				FCB2DF011F44C936000C6A44 /* VpnExtensionLauncher.entitlements */,
 				FCB2DEFA1F44AD07000C6A44 /* main.swift */,
 			);
 			path = VpnExtensionLauncher;
+			sourceTree = "<group>";
+		};
+		FCB2DF071F44CC36000C6A44 /* VpnExtension */ = {
+			isa = PBXGroup;
+			children = (
+				FCB2DF181F44CCC5000C6A44 /* VpnExtension.entitlements */,
+				FCB2DF161F44CC63000C6A44 /* Info.plist */,
+				FCB2DF191F44CD55000C6A44 /* PacketTunnelProvider.h */,
+				FCB2DF1A1F44CD95000C6A44 /* PacketTunnelProvider.m */,
+			);
+			path = VpnExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +111,23 @@
 			productReference = FCB2DEF71F44AD07000C6A44 /* VpnExtensionLauncher */;
 			productType = "com.apple.product-type.tool";
 		};
+		FCB2DF051F44CC36000C6A44 /* VpnExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCB2DF131F44CC36000C6A44 /* Build configuration list for PBXNativeTarget "VpnExtension" */;
+			buildPhases = (
+				FCB2DF021F44CC36000C6A44 /* Sources */,
+				FCB2DF031F44CC36000C6A44 /* Frameworks */,
+				FCB2DF041F44CC36000C6A44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VpnExtension;
+			productName = VpnExtension;
+			productReference = FCB2DF061F44CC36000C6A44 /* VpnExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +141,10 @@
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
+					FCB2DF051F44CC36000C6A44 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = FCB2DEF21F44AD07000C6A44 /* Build configuration list for PBXProject "VpnExtensionLauncher" */;
@@ -103,6 +153,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FCB2DEEE1F44AD07000C6A44;
 			productRefGroup = FCB2DEF81F44AD07000C6A44 /* Products */;
@@ -110,9 +161,21 @@
 			projectRoot = "";
 			targets = (
 				FCB2DEF61F44AD07000C6A44 /* VpnExtensionLauncher */,
+				FCB2DF051F44CC36000C6A44 /* VpnExtension */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCB2DF041F44CC36000C6A44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCB2DF171F44CC63000C6A44 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FCB2DEF31F44AD07000C6A44 /* Sources */ = {
@@ -120,6 +183,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCB2DEFB1F44AD07000C6A44 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB2DF021F44CC36000C6A44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCB2DF1B1F44CD95000C6A44 /* PacketTunnelProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +290,7 @@
 		FCB2DEFF1F44AD07000C6A44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -227,8 +299,41 @@
 		FCB2DF001F44AD07000C6A44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FCB2DF141F44CC36000C6A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VpnExtension/VpnExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = VpnExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.uproxy.macos.client.VpnExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FCB2DF151F44CC36000C6A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VpnExtension/VpnExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = VpnExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.uproxy.macos.client.VpnExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -249,6 +354,14 @@
 			buildConfigurations = (
 				FCB2DEFF1F44AD07000C6A44 /* Debug */,
 				FCB2DF001F44AD07000C6A44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FCB2DF131F44CC36000C6A44 /* Build configuration list for PBXNativeTarget "VpnExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCB2DF141F44CC36000C6A44 /* Debug */,
+				FCB2DF151F44CC36000C6A44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
